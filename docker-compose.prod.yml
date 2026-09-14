@@ -1,6 +1,6 @@
 version: "3.9"
 
-name: iom-itb-sso-keycloak-prod
+name: iom-itb-sso-keycloak-ng-prod
 
 services:
   postgres:
