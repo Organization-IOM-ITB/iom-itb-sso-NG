@@ -37,6 +37,10 @@ services:
       KC_HOSTNAME_STRICT_HTTPS: "false"
       KC_HEALTH_ENABLED: "true"
       KC_PROXY: edge
+      BANKES_PUBLIC_URL: ${BANKES_PUBLIC_URL:-http://localhost:3031}
+      BANKES_KEYCLOAK_CLIENT_SECRET: ${BANKES_KEYCLOAK_CLIENT_SECRET:-bankes-local-secret}
+      OTA_KEYCLOAK_CLIENT_SECRET: ${OTA_KEYCLOAK_CLIENT_SECRET:-ota-local-secret}
+      API_ADMIN_KEYCLOAK_CLIENT_SECRET: ${API_ADMIN_KEYCLOAK_CLIENT_SECRET:-api-admin-local-secret}
     volumes:
       - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
       - ./keycloak/themes/iom-itb:/opt/keycloak/themes/iom-itb:ro

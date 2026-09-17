@@ -36,6 +36,13 @@ services:
       KC_HTTP_ENABLED: "true"
       KC_HEALTH_ENABLED: "true"
       KC_LOG_LEVEL: INFO
+      # Placeholder di realm-export.json. Hanya terpakai saat realm PERTAMA KALI
+      # di-import (DB kosong); pada sso-ng.iom-itb.id realm sudah ada sehingga
+      # client ditambahkan lewat Admin Console (lihat README).
+      BANKES_PUBLIC_URL: ${BANKES_PUBLIC_URL:-https://bankes.iom-itb.id}
+      BANKES_KEYCLOAK_CLIENT_SECRET: ${BANKES_KEYCLOAK_CLIENT_SECRET:-}
+      OTA_KEYCLOAK_CLIENT_SECRET: ${OTA_KEYCLOAK_CLIENT_SECRET:-}
+      API_ADMIN_KEYCLOAK_CLIENT_SECRET: ${API_ADMIN_KEYCLOAK_CLIENT_SECRET:-}
     depends_on:
       postgres:
         condition: service_healthy
