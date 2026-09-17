@@ -1,0 +1,71 @@
+{
+  "clients": [
+    {
+      "clientId": "bankes-app",
+      "name": "Bankes IOM-ITB",
+      "description": "Aplikasi Bankes (Next.js/NextAuth) di BanKes-OTA-NG",
+      "enabled": true,
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret",
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "authorizationServicesEnabled": false,
+      "rootUrl": "https://bankes.iom-itb.id",
+      "baseUrl": "https://bankes.iom-itb.id",
+      "redirectUris": [
+        "https://bankes.iom-itb.id/api/auth/callback/keycloak"
+      ],
+      "webOrigins": [
+        "+"
+      ],
+      "attributes": {
+        "post.logout.redirect.uris": "https://bankes.iom-itb.id/login##https://bankes.iom-itb.id/ota/auth/login",
+        "backchannel.logout.session.required": "true",
+        "backchannel.logout.revoke.offline.tokens": "false"
+      }
+    },
+    {
+      "clientId": "ota-ku-app",
+      "name": "OTA-KU",
+      "description": "Aplikasi OTA-KU (frontend Vite + backend Hono) di BanKes-OTA-NG; token exchange dilakukan backend",
+      "enabled": true,
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret",
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "authorizationServicesEnabled": false,
+      "rootUrl": "https://bankes.iom-itb.id/ota",
+      "baseUrl": "https://bankes.iom-itb.id/ota",
+      "redirectUris": [
+        "https://bankes.iom-itb.id/ota/integrations/keycloak/callback*"
+      ],
+      "webOrigins": [
+        "+"
+      ],
+      "attributes": {
+        "post.logout.redirect.uris": "https://bankes.iom-itb.id/ota/auth/login",
+        "backchannel.logout.session.required": "true",
+        "backchannel.logout.revoke.offline.tokens": "false"
+      }
+    },
+    {
+      "clientId": "iom-itb-api-admin",
+      "name": "IOM API Admin (service account)",
+      "description": "Dipakai iom-itb-api-NG untuk POST /auth/register (Keycloak Admin API)",
+      "enabled": true,
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret",
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": false,
+      "redirectUris": [],
+      "webOrigins": []
+    }
+  ]
+}
