@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('iom-tokens.css');
 
 body {
-    background-color: #D0E2FF !important;
-    background-image: 
-        linear-gradient(rgba(208, 226, 255, 0.8), rgba(208, 226, 255, 0.8)), 
+    background-color: var(--iom-surface-brand) !important;
+    background-image:
+        linear-gradient(rgb(var(--iom-surface-brand-rgb) / 0.8), rgb(var(--iom-surface-brand-rgb) / 0.8)),
         url('../img/bg-itb.webp') !important;
 
     background-repeat: no-repeat !important;
@@ -17,7 +18,7 @@ body {
     min-height: 100vh;
     margin: 0;
 
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif, Roboto, Helvetica !important;
+    font-family: var(--iom-font-sans) !important;
 }
 
 /* 2. Logo IOM ITB di Atas (Luar Card) */
@@ -39,7 +40,7 @@ body {
     margin: 0 auto;
     padding: 30px 40px;
     background: rgba(255, 255, 255, 0.98) !important;
-    border-radius: 12px !important;
+    border-radius: var(--iom-radius-lg) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
     border: none !important;
 }
@@ -52,8 +53,8 @@ body {
 .custom-title h2 {
     font-size: 18px;
     font-weight: 700;
-    color: #000;
-    line-height: 1.4;
+    color: var(--iom-fg);
+    line-height: var(--iom-leading-tight);
     margin: 0;
 }
 
@@ -65,7 +66,7 @@ body {
 .control-label {
     display: block;
     font-weight: 600;
-    color: #111;
+    color: var(--iom-fg);
     margin-bottom: 8px;
     font-size: 14px;
     text-align: left;
@@ -73,21 +74,21 @@ body {
 .form-control {
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid #d1d5db !important;
-    border-radius: 8px !important;
+    border: 1px solid var(--iom-control-border) !important;
+    border-radius: var(--iom-radius) !important;
     font-size: 13px;
     box-sizing: border-box;
-    background-color: #fff !important;
+    background-color: var(--iom-surface) !important;
     height: auto !important;
 }
 .form-control::placeholder {
-    color: #9ca3af;
+    color: var(--iom-placeholder);
     font-size: 13px;
 }
 .form-control:focus {
     outline: none;
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+    border-color: var(--iom-primary) !important;
+    box-shadow: 0 0 0 3px rgb(var(--iom-primary-rgb) / 0.2) !important;
 }
 
 /* 6. Link Lupa Sandi */
@@ -97,7 +98,7 @@ body {
     margin-bottom: 25px;
 }
 .forgot-password {
-    color: #0052DB;
+    color: var(--iom-primary);
     font-size: 12px;
     text-decoration: none;
     font-weight: 400;
@@ -109,16 +110,16 @@ body {
 /* 7. Tombol Sign In */
 #kc-login {
     width: 100%;
-    background-color: #2577FF !important; /* Warna biru cerah */
+    background-color: var(--iom-primary) !important;
     background-image: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
 
-    color: white !important;
+    color: var(--iom-surface) !important;
     backdrop-filter: none;
     border: none !important;
     padding: 10px !important;
-    border-radius: 8px !important;
+    border-radius: var(--iom-radius) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     cursor: pointer;
@@ -127,7 +128,7 @@ body {
 }
 
 #kc-login:hover {
-    background-color: #0052DB !important;
+    background-color: var(--iom-primary-hover) !important;
 }
 
 #kc-page-title {
@@ -136,15 +137,15 @@ body {
 
 /* Container Box Merah Muda */
 .error-message-container {
-    background-color: #FEE2E2 !important; /* Merah muda pudar */
-    border-radius: 4px;
+    background-color: rgb(var(--iom-danger-rgb) / 0.12) !important;
+    border-radius: var(--iom-radius-sm);
     padding: 12px;
     margin-bottom: 20px;
 }
 
 /* Teks Error Merah Tua */
 .error-text {
-    color: #991B1B !important; /* Merah tua agar terbaca jelas */
+    color: var(--iom-danger-strong) !important;
     font-size: 12px;
     margin: 0;
     font-weight: 400;
@@ -153,7 +154,7 @@ body {
 
 /* Opsional: Ubah border input jadi merah saat error */
 .form-control.error {
-    border-color: #EF4444 !important;
+    border-color: var(--iom-danger) !important;
 }
 
 #kc-content-wrapper .alert-error, 
